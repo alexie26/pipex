@@ -6,7 +6,7 @@
 /*   By: roalexan <roalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:18:11 by roalexan          #+#    #+#             */
-/*   Updated: 2025/05/12 16:14:25 by roalexan         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:20:42 by roalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@
 //1. create a pipe: one for reading and one for writing
 //2. fork a child process
 
-typedef struct s_pipex
+typedef struct s_pipe
 {
 	int			pipex_fd[2];
-	
+	int			infile;
+	int			outfile;
 	char		**cmd1;
 	char		**cmd2;	
 
