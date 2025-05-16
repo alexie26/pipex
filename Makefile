@@ -1,10 +1,12 @@
 NAME = pipex
 
 COMPILER = cc
-CFLAGS =# -Wall -Wextra -Werror -g 
+CFLAGS = -Wall -Wextra -Werror -g 
 
 SRC = pipex.c \
-
+		src/child.c \
+		src/free.c \
+		src/parsing.c \
 
 
 OBJS_DIR = objs
