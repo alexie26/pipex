@@ -6,7 +6,7 @@
 /*   By: roalexan <roalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:18:11 by roalexan          #+#    #+#             */
-/*   Updated: 2025/05/16 16:22:24 by roalexan         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:48:19 by roalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ char		*find_cmd(char **path, char *cmd);
 char		*get_cmd_path(char *cmd, char **env);
 
 t_pipex		*init(char **argv, char **env);
-int 		validate_pipex(t_pipex *pipex);
+int			validate_pipex(t_pipex *pipex);
 
 #endif
