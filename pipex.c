@@ -6,7 +6,7 @@
 /*   By: roalexan <roalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:31:36 by roalexan          #+#    #+#             */
-/*   Updated: 2025/05/16 16:27:31 by roalexan         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:40:21 by roalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ t_pipex	*init(char **argv, char **env)
 {
 	t_pipex	*pipex;
 
-	// char	*path_env;
 	pipex = ft_calloc(sizeof(t_pipex), 1);
 	if (!pipex)
-		return (perror("malloc error\n"), free_fetus(pipex), NULL);
+		return (perror("Error malloc"), free_fetus(pipex), NULL);
 	pipex->infile = open(argv[1], O_RDONLY);
 	if (pipex->infile < 0)
 		return (perror("Error read file"), free(pipex), NULL);
@@ -51,10 +50,10 @@ int	validate_pipex(t_pipex *pipex)
 	return (1);
 }
 
-void	leaks(void)
-{
-	system("leaks pipex");
-}
+// void	leaks(void)
+// {
+// 	system("leaks pipex");
+// }
 
 int	main(int argc, char **argv, char **env)
 {
@@ -62,7 +61,6 @@ int	main(int argc, char **argv, char **env)
 	pid_t	pid1;
 	pid_t	pid2;
 
-	atexit(leaks);
 	if (argc != 5)
 	{
 		perror("Wrong amount of arguments :< ");

@@ -6,7 +6,7 @@
 /*   By: roalexan <roalexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:03:25 by roalexan          #+#    #+#             */
-/*   Updated: 2025/05/16 16:14:34 by roalexan         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:43:08 by roalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	first_fetus(t_pipex *pipex)
 	if (!cmd)
 	{
 		free_fetus(pipex);
-		perror("fetus deletus");
+		perror("Bad command!");
 		exit(127);
 	}
 	execve(cmd, pipex->cmd1, pipex->env);
@@ -43,7 +43,7 @@ void	second_fetus(t_pipex *pipex)
 	if (!cmd)
 	{
 		free_fetus(pipex);
-		perror("forkus porks fetus deletus");
+		perror("Bad command!");
 		exit(127);
 	}
 	execve(cmd, pipex->cmd2, pipex->env);
